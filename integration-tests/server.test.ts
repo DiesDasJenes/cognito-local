@@ -136,6 +136,7 @@ describe("HTTP server", () => {
       );
       expect(response.status).toEqual(200);
       expect(response.body).toEqual({
+        subject_types_supported: ["public"],
         id_token_signing_alg_values_supported: ["RS256"],
         jwks_uri: `http://localhost:9229/any-user-pool/.well-known/jwks.json`,
         issuer: `http://localhost:9229/any-user-pool`,
