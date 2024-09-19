@@ -57,6 +57,7 @@ export const createServer = (
 
   app.get("/:userPoolId/.well-known/openid-configuration", (req, res) => {
     res.status(200).json({
+      subject_types_supported: ["public"],
       id_token_signing_alg_values_supported: ["RS256"],
       jwks_uri: `http://localhost:9229/${req.params.userPoolId}/.well-known/jwks.json`,
       issuer: `http://localhost:9229/${req.params.userPoolId}`,
